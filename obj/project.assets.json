@@ -503,11 +503,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ds02\\LojaPerfume\\LojaPerfume.csproj",
+      "projectUniqueName": "C:\\back\\Perfumaria\\LojaPerfume.csproj",
       "projectName": "LojaPerfume",
-      "projectPath": "C:\\Users\\ds02\\LojaPerfume\\LojaPerfume.csproj",
+      "projectPath": "C:\\back\\Perfumaria\\LojaPerfume.csproj",
       "packagesPath": "C:\\Users\\ds02\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ds02\\LojaPerfume\\obj\\",
+      "outputPath": "C:\\back\\Perfumaria\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ds02\\AppData\\Roaming\\NuGet\\NuGet.Config"

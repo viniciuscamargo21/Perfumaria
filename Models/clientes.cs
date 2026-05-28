@@ -11,6 +11,23 @@ namespace LojaPerfume.Models
     {   
         [Key]
         [Column("id")]
-        public int IdUsuario { get; set;}
+        public int IdCliente { get; set; }
+
+        [Column("nome")]
+        public string NomeCliente { get; set; }
+
+        [Column("cpf")]
+        public string CpfCliente { get; set; }
+
+        [Column("telefone_whatsapp")]
+        public string TelefoneCliente {get; set; }
+
+        [Column("email")]
+        public string EmailCliente { get; set; }
+
+        [Column("data_cadastro")]
+        public DateTime DataCadastro { get; set; }
+
+
     }
 }
