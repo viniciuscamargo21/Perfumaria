@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using LojaPerfume.Models;
+using Perfumaria.Models;
 
 namespace LojaPerfume.Repository
 {
@@ -10,5 +11,6 @@ namespace LojaPerfume.Repository
         }
 
         public DbSet<clientes> Clientes { get; set; }
+        public DbSet<Produtos> produtos { get; set; }
     }
 }
