@@ -44,7 +44,33 @@ namespace Perfumaria.Controllers
             return Ok();
         }
 
-       // [HttpPut("{id}")]
-       // public async Task<ActionResult<Produtos>> EditarProdutos(Produtos pro)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Produtos>> EditarProdutos(int id)
+        {
+            var produtoExistente = await _context.produtos.FindAsync(id);
+            if(produtoExistente == null)
+            {
+                return NotFound($"Produto com id = {id} não encontrado!");
+            }
+
+            _context.produtos.Update(produtoExistente);
+            await _context.SaveChangesAsync();
+
+            return Ok(produtoExistente);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeletarProduto(int id)
+        {
+            var produto = await _context.produtos.FindAsync(id);
+            if(produto == null)
+            {
+                return NotFound($"Produto com o id = {id} não encontrado!");
+            }
+            _context.produtos.Remove(produto);
+            await _context.SaveChangesAsync();
+
+            return Ok("Usuario deletado com sucesso!");
+        }
     }
 }

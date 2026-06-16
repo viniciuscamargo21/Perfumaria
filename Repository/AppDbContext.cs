@@ -12,5 +12,6 @@ namespace LojaPerfume.Repository
 
         public DbSet<clientes> Clientes { get; set; }
         public DbSet<Produtos> produtos { get; set; }
+        public DbSet<Admin> admin { get; set; }
     }
 }
