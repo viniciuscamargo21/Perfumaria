@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +19,7 @@ namespace Perfumaria.Models
           [Column("valor_total")]
           public decimal ValorTotal {get; set;}
 
-            [Column("status")]
+        //  [Column("status")]
           public enum StatusPedido {
         PENDENTE,
         PAGO,
@@ -26,8 +28,8 @@ namespace Perfumaria.Models
         CANCELADO
 }
 
-            [Column("data_criacao")]
-            public Datetime DataCriacao {get; set;}
+        [Column("data_criacao")]
+         public DateTime DataCriacao {get; set;}
 
 
     
