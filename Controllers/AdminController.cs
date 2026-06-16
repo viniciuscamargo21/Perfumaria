@@ -43,5 +43,32 @@ namespace Perfumaria.Controllers
 
             return Ok();
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Admin>> Editaradm(int id, Admin admin)
+        {
+            var admExistentes = await _context.admin.FindAsync(id);
+            if(admExistentes == null)
+            {
+                return NotFound("ADM nao encontrado");
+            }
+
+            _context.admin.Update(admExistentes);
+            await _context.SaveChangesAsync();
+            return Ok(admExistentes);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeletarAdm(int id)
+        {
+            var admin = await _context.admin.FindAsync(id);
+            if(admin == null)
+            {
+               return NotFound("ADM nao encontrado"); 
+            }
+            _context.admin.Remove(admin);
+            await _context.SaveChangesAsync();
+            return Ok("Adm deletado com sucesso!");
+        }
     }
 }
