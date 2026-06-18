@@ -19,15 +19,9 @@ namespace Perfumaria.Models
           [Column("valor_total")]
           public decimal ValorTotal {get; set;}
 
-        //  [Column("status")]
-          public enum StatusPedido {
-        PENDENTE,
-        PAGO,
-        ENVIADO,
-        ENTREGUE,
-        CANCELADO
-}
-
+          [Column("statusserv")]
+          public string StatusPedidos { get; set;}
+        
         [Column("data_criacao")]
          public DateTime DataCriacao {get; set;}
 
