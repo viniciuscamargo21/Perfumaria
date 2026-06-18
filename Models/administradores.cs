@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Perfumaria.Models
 {
-    public class Admin
+    public class administradores
     {
         [Key]
         [Column("admin_id")]

@@ -35,16 +35,16 @@ namespace LojaPerfume.Models
         public string Numero { get; set; }
 
         [Column("complemento")]
-        public string Complemento { get; set; }
+        public string? Complemento { get; set; }
 
         [Column("bairro")]
-        public string Bairro { get; set; }
+        public string? Bairro { get; set; }
 
         [Column("cidade")]
-        public string Cidade { get; set; }
+        public string? Cidade { get; set; }
 
         [Column("estado")]
-        public string Estado { get; set; }
+        public string? Estado { get; set; }
 
         [Column("data_cadastro")]
         public DateTime DataCadastro { get; set; }
