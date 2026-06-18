@@ -34,7 +34,7 @@ namespace Perfumaria.Controllers
         {
             Pedidos publi = new Pedidos();
 
-            publi.PedidosId = post.PedidosId;
+            publi.ClienteId = post.ClienteId;
             publi.ValorTotal = post.ValorTotal;
             publi.StatusPedidos = post.StatusPedidos;
 
@@ -68,7 +68,7 @@ namespace Perfumaria.Controllers
                 return NotFound($"Pedido numero = {id} não existe!");
             }
 
-            pedidoExiste.PedidosId = pedidoEditar.PedidosId;
+            pedidoExiste.ClienteId = pedidoEditar.ClienteId;
             pedidoExiste.ValorTotal = pedidoEditar.ValorTotal;
             pedidoExiste.StatusPedidos = pedidoEditar.StatusPedidos;
 

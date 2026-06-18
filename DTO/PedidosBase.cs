@@ -7,7 +7,7 @@ namespace Perfumaria.DTO
 {
     public class PedidosBase
     {
-        public int PedidosId { get; set; }
+        public int ClienteId { get; set; }
         public decimal ValorTotal { get; set; }
         public string StatusPedidos { get; set; }
     }

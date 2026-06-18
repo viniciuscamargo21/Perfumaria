@@ -10,7 +10,7 @@ namespace Perfumaria.Models
     public class Pedidos
     {
         [Key]
-        [Column("pedidos_id")]
+        [Column("pedido_id")]
         public int PedidosId {get; set;}
 
          [Column("cliente_id")]
@@ -24,6 +24,7 @@ namespace Perfumaria.Models
         
         [Column("data_criacao")]
          public DateTime DataCriacao {get; set;}
+         
 
 
     

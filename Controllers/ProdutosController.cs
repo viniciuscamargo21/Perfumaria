@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LojaPerfume.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Perfumaria.DTO;
 using Perfumaria.Models;
 
 
@@ -30,15 +31,26 @@ namespace Perfumaria.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Produtos>> CriarProduto(Produtos pro)
+        public async Task<ActionResult<Produtos>> CriarProduto(ProdutosBase pro)
         {
-            var isProdutoExistente = await _context.produtos.AnyAsync(p => p.ProdutoId == pro.ProdutoId);
+            var isProdutoExistente = await _context.produtos.AnyAsync(p => p.NomeProduto == pro.NomeProduto);
             if(isProdutoExistente)
             {
                 return BadRequest("Produto ja cadastrado!");
             }
 
-            await _context.produtos.AddAsync(pro);
+            Produtos produtonovo = new Produtos();
+
+            produtonovo.NomeProduto = pro.NomeProduto;
+            produtonovo.MarcaProduto = pro.MarcaProduto;
+            produtonovo.CategoriaProduto = pro.CategoriaProduto;
+            produtonovo.PrecoProduto = pro.PrecoProduto;
+            produtonovo.EstoqueProduto = pro.EstoqueProduto;
+            produtonovo.FotoPerfil = pro.FotoPerfil;
+            produtonovo.Descricao = pro.Descricao;
+
+
+            await _context.produtos.AddAsync(produtonovo);
             await _context.SaveChangesAsync();
 
             return Ok();
